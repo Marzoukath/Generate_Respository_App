@@ -10,6 +10,7 @@ use App\Http\Controllers\SessionsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StaticAccueilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,7 +47,6 @@ Route::group(['middleware' => 'auth'], function () {
 	// 	return view('laravel-examples/citizens-management');
 	// })->name('citizens-management');
 
-	Route::get('citizens-management', [CitizenController::class, 'index'])->name('citizens-management');
 
 
 	// Route::get('user-management', function () {
@@ -69,11 +69,7 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('static-sign-up');
 	})->name('sign-up');
 
-	Route::get('insert_citizens', function () { // tu as ajoute
-		return view('insert_citizens');
-	})->name('citizens');
-
-    Route::post('insert_citizens', [CitizenController::class, 'store'])->name('citizens.store'); //ajout
+	
 
     Route::get('/logout', [SessionsController::class, 'destroy']);
 	Route::get('/user-profile', [InfoUserController::class, 'create']);
@@ -100,3 +96,11 @@ Route::group(['middleware' => 'guest'], function () {
 Route::get('/login', function () {
     return view('session/login-session');
 })->name('login');
+
+Route::get('/accueil', [StaticAccueilController::class, 'accueil'])->name('accueil');
+
+Route::get('insert_citizens', function () { // tu as ajoute
+	return view('insert_citizens');
+})->name('citizens');
+Route::get('citizens-management', [CitizenController::class, 'index'])->name('citizens-management');
+Route::post('insert_citizens', [CitizenController::class, 'store'])->name('citizens.store');

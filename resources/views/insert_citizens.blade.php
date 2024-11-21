@@ -1,4 +1,4 @@
-@extends('layouts.user_type.auth')
+@extends('layouts.user_type.any')
 
 @section('content')
 
@@ -19,7 +19,7 @@
         <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
           <div class="card z-index-0">
             <div class="card-header text-center pt-4">
-              <h5>A remplir</h5>
+              <h5>Formulaire</h5>
             </div>
             
             <div class="card-body">

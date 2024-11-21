@@ -21,9 +21,6 @@
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         ID
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Photo
-                                    </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Nom
                                     </th>
@@ -45,6 +42,9 @@
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Numéro d'identification
                                     </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Actions
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -52,11 +52,6 @@
                                     <tr>
                                         <td class="ps-4">
                                             <p class="text-xs font-weight-bold mb-0">{{ $citizen->id }}</p>
-                                        </td>
-                                        <td>
-                                            <div>
-                                                <img src="{{ $citizen->photo ?? '/assets/img/default-avatar.png' }}" class="avatar avatar-sm me-3">
-                                            </div>
                                         </td>
                                         <td class="text-center">
                                             <p class="text-xs font-weight-bold mb-0">{{ $citizen->first_name }}</p>
@@ -87,6 +82,16 @@
                                                 <i class="cursor-pointer fas fa-trash text-secondary"></i>
                                             </span>
                                         </td>
+                                        <td>
+                                            <div>
+                                                <button src="" class="button">Generer </button>
+                                            </div>
+                                        </td>
+                                        {{-- <td>
+                                            <div>
+                                                <img src="{{ $citizen->photo ?? '/assets/img/default-avatar.png' }}" class="avatar avatar-sm me-3">
+                                            </div>
+                                        </td> --}}
                                     </tr>
                                 @endforeach
                             </tbody>
