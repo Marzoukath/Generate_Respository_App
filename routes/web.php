@@ -23,25 +23,29 @@ use App\Http\Controllers\StaticAccueilController;
 |
 */
 
+// Route::get('/', function () {
+// 	return redirect()->route('accueil');
+// });
 
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/', [HomeController::class, 'home']);
+
 	Route::get('dashboard', function () {
 		return view('dashboard');
 	})->name('dashboard');
 
-	Route::get('billing', function () {
-		return view('billing');
-	})->name('billing');
+	// Route::get('billing', function () {
+	// 	return view('billing');
+	// })->name('billing');
 
 	Route::get('profile', function () {
 		return view('profile');
 	})->name('profile');
 
-	Route::get('rtl', function () {
-		return view('rtl');
-	})->name('rtl');
+	// Route::get('rtl', function () {
+	// 	return view('rtl');
+	// })->name('rtl');
 
 	// Route::get('citizens-management', function () {
 	// 	return view('laravel-examples/citizens-management');
@@ -53,9 +57,11 @@ Route::group(['middleware' => 'auth'], function () {
 	// 	return view('laravel-examples/user-management');
 	// })->name('user-management');
 
-	Route::get('tables', function () {
-		return view('tables');
-	})->name('tables');
+	Route::get ('tables', [CitizenController::class, 'approuver'])->name('approuver');
+
+	Route::get('membres', function () {
+		return view('membres');
+	})->name('membres');
 
     Route::get('virtual-reality', function () {
 		return view('virtual-reality');

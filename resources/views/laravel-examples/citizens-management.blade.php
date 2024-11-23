@@ -42,7 +42,7 @@
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Numéro d'identification
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Actions
                                     </th>
                                 </tr>
@@ -74,18 +74,16 @@
                                         <td class="text-center">
                                             <span class="text-secondary text-xs font-weight-bold">{{ $citizen->id_number}}</span>
                                         </td>
-                                        <td class="text-center">
+                                        {{-- <td class="text-center">
                                             <a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit citizen">
                                                 <i class="fas fa-user-edit text-secondary"></i>
                                             </a>
                                             <span>
                                                 <i class="cursor-pointer fas fa-trash text-secondary"></i>
                                             </span>
-                                        </td>
-                                        <td>
-                                            <div>
-                                                <button src="" class="button">Generer </button>
-                                            </div>
+                                        </td> --}}
+                                        <td class="text-center">
+                                            <a href="{{--route('')--}}"><span class="badge badge-sm bg-gradient-secondary">Approuver</span></a>
                                         </td>
                                         {{-- <td>
                                             <div>

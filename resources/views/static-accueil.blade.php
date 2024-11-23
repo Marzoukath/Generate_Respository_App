@@ -40,7 +40,9 @@
                                         <div>
                                             <h5 class="mb-0">Tous les citoyens</h5>
                                         </div>
+                                        @auth
                                         <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Insérer un nouveau Citoyen</a>
+                                        @endauth
                                     </div>
                                 </div>
                                 <div class="card-body px-0 pt-0 pb-2">
@@ -72,9 +74,10 @@
                                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                         Numéro d'identification
                                                     </th>
-                                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                         Actions
                                                     </th>
+                                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -104,18 +107,21 @@
                                                         <td class="text-center">
                                                             <span class="text-secondary text-xs font-weight-bold">{{ $citizen->id_number}}</span>
                                                         </td>
-                                                        <td class="text-center">
+                                                        {{-- <td class="text-center">
                                                             <a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit citizen">
                                                                 <i class="fas fa-user-edit text-secondary"></i>
                                                             </a>
                                                             <span>
                                                                 <i class="cursor-pointer fas fa-trash text-secondary"></i>
                                                             </span>
+                                                        </td> --}}
+                                                        <td class="align-middle text-center text-sm">
+                                                            <button class="badge badge-sm bg-gradient-success">Generer</button>
                                                         </td>
-                                                        <td>
-                                                            <div>
-                                                                <button src="" class="button">Generer </button>
-                                                            </div>
+                                                        <td class="text-center">
+                                                            <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                              Edit
+                                                            </a>
                                                         </td>
                                                         {{-- <td>
                                                             <div>

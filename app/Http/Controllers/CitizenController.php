@@ -14,6 +14,8 @@ class CitizenController extends Controller
     public function index()
     {  
         $citizens = Citizen::all();
+        // $citizens = Citizen::where('status','unappoved')->get();
+
         return view('laravel-examples/citizens-management', ['citizens' => $citizens]);
        
     }
@@ -57,6 +59,11 @@ class CitizenController extends Controller
 
         // Redirection avec un message de succès
         return redirect()->back()->with('success', 'Les informations ont été enregistrées avec succès.');
+    }
+
+    public function approuver() {
+        $citizens = Citizen::all();
+        return view('tables', ['citizens' => $citizens]);
     }
 
     /**
