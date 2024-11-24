@@ -24,25 +24,29 @@ use App\Http\Controllers\PdfController;
 |
 */
 
+// Route::get('/', function () {
+// 	return redirect()->route('accueil');
+// });
 
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/', [HomeController::class, 'home']);
+
 	Route::get('dashboard', function () {
 		return view('dashboard');
 	})->name('dashboard');
 
-	Route::get('billing', function () {
-		return view('billing');
-	})->name('billing');
+	// Route::get('billing', function () {
+	// 	return view('billing');
+	// })->name('billing');
 
 	Route::get('profile', function () {
 		return view('profile');
 	})->name('profile');
 
-	Route::get('rtl', function () {
-		return view('rtl');
-	})->name('rtl');
+	// Route::get('rtl', function () {
+	// 	return view('rtl');
+	// })->name('rtl');
 
 	// Route::get('citizens-management', function () {
 	// 	return view('laravel-examples/citizens-management');
@@ -54,9 +58,11 @@ Route::group(['middleware' => 'auth'], function () {
 	// 	return view('laravel-examples/user-management');
 	// })->name('user-management');
 
-	Route::get('tables', function () {
-		return view('tables');
-	})->name('tables');
+	Route::get ('tables', [CitizenController::class, 'approuver'])->name('approuver');
+
+	Route::get('membres', function () {
+		return view('membres');
+	})->name('membres');
 
     Route::get('virtual-reality', function () {
 		return view('virtual-reality');
@@ -99,6 +105,11 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::get('/accueil', [StaticAccueilController::class, 'accueil'])->name('accueil');
+
+
+Route::post('/verify-id', [CitizenController::class, 'verifyId']);
+// Route::get('/generate-certificate/{id}', [CertificateController::class, 'generate']);
+Route::post('/citizens/approve', [CitizenController::class, 'approve'])->name('citizens.approve');
 
 Route::get('insert_citizens', function () { // tu as ajoute
 	return view('insert_citizens');
