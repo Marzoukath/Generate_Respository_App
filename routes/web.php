@@ -105,6 +105,11 @@ Route::get('/login', function () {
 
 Route::get('/accueil', [StaticAccueilController::class, 'accueil'])->name('accueil');
 
+
+Route::post('/verify-id', [CitizenController::class, 'verifyId']);
+// Route::get('/generate-certificate/{id}', [CertificateController::class, 'generate']);
+Route::post('/citizens/approve', [CitizenController::class, 'approve'])->name('citizens.approve');
+
 Route::get('insert_citizens', function () { // tu as ajoute
 	return view('insert_citizens');
 })->name('citizens');
