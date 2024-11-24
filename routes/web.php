@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaticAccueilController;
+use App\Http\Controllers\PdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -104,3 +105,5 @@ Route::get('insert_citizens', function () { // tu as ajoute
 })->name('citizens');
 Route::get('citizens-management', [CitizenController::class, 'index'])->name('citizens-management');
 Route::post('insert_citizens', [CitizenController::class, 'store'])->name('citizens.store');
+
+Route::get('/pdf/{id}', [PdfController::class, 'generatePDF'])->name('pdf');
