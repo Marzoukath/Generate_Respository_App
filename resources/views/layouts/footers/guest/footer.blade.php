@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
       <div class="col-lg-8 mb-4 mx-auto text-center">
-          <a href="https://www.creative-tim.com/?_ga=2.242299972.757293697.1638911086-1528502635.1638911086" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+          {{-- <a href="https://www.creative-tim.com/?_ga=2.242299972.757293697.1638911086-1528502635.1638911086" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
               Company
           </a>
           <a href="https://www.creative-tim.com/presentation" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
@@ -20,7 +20,7 @@
           </a>
           <a href="https://www.creative-tim.com/support-terms" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
               Pricing
-          </a>
+          </a> --}}
       </div>
         @if (!auth()->user() || \Request::is('static-sign-up')) 
           <div class="col-lg-8 mx-auto text-center mb-4 mt-2">
@@ -49,9 +49,11 @@
               Copyright © <script>
                 document.write(new Date().getFullYear())
               </script> Soft by 
-              <a style="color: #252f40;" href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
+              <a style="color: #252f40;" href="https://github.com/Marzoukath" class="font-weight-bold ml-1" target="_blank">AGBODJA Marzoukath</a>
               &
-              <a style="color: #252f40;" href="https://www.updivision.com" class="font-weight-bold ml-1" target="_blank">UPDIVISION</a>.
+              <a style="color: #252f40;" href="https://github.com/FleuretteAVLESSI/FleurAVLESSI" class="font-weight-bold ml-1" target="_blank">AVLESSI Fleurette</a>
+              &
+              <a style="color: #252f40;" href="https://github.com/loryy24" class="font-weight-bold ml-1" target="_blank">CHATIGRE Larissa</a>.
             </p>
           </div>
         </div>
