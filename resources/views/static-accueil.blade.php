@@ -139,6 +139,7 @@
         </div>
     </div>
 </div>
+
 <script>
     // Gestion du clic sur le bouton "Générer"
     document.querySelectorAll('.generate-btn').forEach(button => {
@@ -179,7 +180,8 @@
         .then(data => {
             if (data.valid) {
                 alert('Numéro valide. Le certificat sera généré.');
-                window.location.href = '/generate-certificate/' + citizenId; // Redirection pour générer le certificat
+                window.location.href = '/generate-pdf/' + citizenId; // Redirection pour générer le certificat
+                
             } else {
                 alert('Numéro incorrect.');
             }
@@ -192,7 +194,7 @@
 </script>
 
 
-                                            </tbody>
+                                      </tbody>
                                         </table>
                                        
                                     </div>
